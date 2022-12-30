@@ -34,6 +34,12 @@ public class InterfacedScoreCalc {
 
 interface StudentFunctions{
 	void generateResult();
+	void setTestScore();
+	String getStudentName();
+	void setStudentName(String studentName);
+	String getTestResult();
+	int[] getTestScores();
+	void setTestResult();
 }
 
 abstract class Student implements StudentFunctions{
@@ -47,28 +53,28 @@ abstract class Student implements StudentFunctions{
 
     	abstract public void generateResult();
 
-    	void setTestScore(int testNumber, int testScore) {
+    	public void setTestScore(int testNumber, int testScore) {
         	testScores[testNumber] = testScore;
    	 }
 
-    	String getStudentName() {
+    	public String getStudentName() {
         	return this.studentName;
     	}
 
-    	void setStudentName(String studentName) {
+    	public void setStudentName(String studentName) {
         	this.studentName = studentName;
    	 }
 
-    	int[] getTestScores() {
+    	public int[] getTestScores() {
         	return this.testScores;
     	}
 
-    	String getTestResult() {
+    	public String getTestResult() {
         	this.generateResult();
         	return testResult;
     	}
 
-    	void setTestResult(String testResult) {
+    	public void setTestResult(String testResult) {
         	this.testResult = testResult;
     	}
 }
